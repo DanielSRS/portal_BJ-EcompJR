@@ -1,7 +1,5 @@
 <?php
 
-require_once "database/Connection.php";
-
 class User{
     private $id;
     private $name;
