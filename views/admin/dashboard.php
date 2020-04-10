@@ -2,7 +2,6 @@
     require_once "../../database/Connection.php";
     require_once "../../models/User.php";
     require_once "../../controllers/UserController.php";
-    session_start();
     UserController::verifyLogin();
     echo "Olá {$_SESSION['user']}";
 ?>

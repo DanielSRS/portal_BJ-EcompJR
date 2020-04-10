@@ -22,6 +22,7 @@ class UserController{
     }
 
     public function verifyLogin(){
+        session_start();
         if(!$_SESSION['user']){
             header('Location: /EcompJrP/portal_BJ-EcompJR/home/login');
         }

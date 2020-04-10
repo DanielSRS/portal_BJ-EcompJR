@@ -3,6 +3,7 @@
     require_once "Router.php";
     require_once "database/Connection.php";
     require_once "models/User.php";
+    require_once "models/Member.php";
     require_once "models/Company.php";
     require_once "controllers/UserController.php";
     require_once "controllers/HomeController.php";
