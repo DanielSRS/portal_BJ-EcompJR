@@ -34,7 +34,7 @@ class Company{
         $connection = Connection::getConnection();
         $query = "select * from companys";
         $result = mysqli_query($connection, $query);
-        $companys;
+        $companys = false;
         for($i = 0; $i < mysqli_num_rows($result); $i++){
             $company = mysqli_fetch_assoc($result);
             $companys[$i] = new Company($company['id'], $company['name'], $company['federation']);
