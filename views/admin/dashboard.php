@@ -11,14 +11,6 @@
 <br>
 
 <div>
-    <a href="/portal_BJ-EcompJR/member/index">Listar membros</a>
-    <a href="/portal_BJ-EcompJR/member/create">Cadastrar membro</a>
-</div>
-
-<br>
-<br>
-
-<div>
     <a href="/portal_BJ-EcompJR/company/index">Listar empresa</a>
     <a href="/portal_BJ-EcompJR/company/create">Cadastrar empresa</a>
 </div>
