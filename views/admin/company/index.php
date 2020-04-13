@@ -35,15 +35,26 @@
             echo $company->getFederation();
             echo "<br>";
         }
+        $txt = '';
     }
     else{
-?>
-        <a href="/portal_BJ-EcompJR/company/create/">
-            <button>
-                Criar
-            </button>
-        </a>
-<?php
-        echo "Não há empresas ";
+        $txt = "Não há empresas ";
     }
 ?>
+
+<h1><?php echo $txt?></h1>
+
+<br>
+<br>
+
+<a href="/portal_BJ-EcompJR/company/create/">
+    <button>
+        Adicionar empresa
+    </button>
+</a>
+
+<a href="/portal_BJ-EcompJR/views/admin/dashboard.php">
+    <button>
+        Dashboard
+    </button>
+</a>

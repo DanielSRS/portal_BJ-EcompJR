@@ -15,8 +15,15 @@ class Member{
 
     public static function create($name, $position, $companyId){
         $conection = Connection::getConnection();
-        $query = "insert into members (name, position, company_id) values('{$name}', '{$position}', '{$companyId}')";
+        $query = "select * from members where name = '{$name}' and position = '{$position}' and company_id = '{$companyId}'";
         $result = mysqli_query($conection, $query);
+        if(mysqli_num_rows($result) == 1){
+            return true;
+        }
+        else{
+            $query = "insert into members (name, position, company_id) values('{$name}', '{$position}', '{$companyId}')";
+            return mysqli_query($conection, $query);;
+        }
     }
 
     public static function getById($id){

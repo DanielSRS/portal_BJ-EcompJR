@@ -13,8 +13,15 @@ class Company{
 
     public static function create($name, $federation){
         $conection = Connection::getConnection();
-        $query = "insert into companys (name, federation) values('{$name}', '{$federation}')";
+        $query = "select * from companys where name = '{$name}' and federation = '{$federation}'";
         $result = mysqli_query($conection, $query);
+        if(mysqli_num_rows($result) == 1){
+            return true;
+        }
+        else{
+            $query = "insert into companys (name, federation) values('{$name}', '{$federation}')";
+            return mysqli_query($conection, $query);
+        }
     }
 
     public static function getById($id){
