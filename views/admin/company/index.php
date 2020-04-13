@@ -10,26 +10,24 @@
 <?php
     $companys = CompanyController::all();
     foreach($companys as $company){
-    
-
 ?>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/company/edit/<?php echo $company->getId()?>">
-<button>
-Editar
-</button>
+<a href="/portal_BJ-EcompJR/company/edit/<?php echo $company->getId()?>">
+    <button>
+        Editar
+    </button>
 </a>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/company/delete/<?php echo $company->getId()?>">
-<button>
-Excluir
-</button>
+<a href="/portal_BJ-EcompJR/company/delete/<?php echo $company->getId()?>">
+    <button>
+        Excluir
+    </button>
 </a>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/member/index/<?php echo $company->getId()?>">
-<button>
-Membros
-</button>
+<a href="/portal_BJ-EcompJR/member/index/<?php echo $company->getId()?>">
+    <button>
+        Membros
+    </button>
 </a>
 
 <?php

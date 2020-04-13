@@ -6,7 +6,7 @@
 ?>
 
 <html>
-    <form action="/EcompJrP/portal_BJ-EcompJR/member/store" method="post">
+    <form action="/portal_BJ-EcompJR/member/store" method="post">
         <input name="name" plceholder="name">
         <input name="position" plceholder="position">
         <input name="id" value="<?php echo $_GET['id']?>" style="display: none;">

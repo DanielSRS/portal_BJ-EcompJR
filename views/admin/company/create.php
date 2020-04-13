@@ -6,7 +6,7 @@
 ?>
 
 <html>
-    <form action="/EcompJrP/portal_BJ-EcompJR/company/store" method="post">
+    <form action="/portal_BJ-EcompJR/company/store" method="post">
         <input name="name" plceholder="name">
         <input name="federation" plceholder="federation">
         <button type="submit">Cadastrar </button>

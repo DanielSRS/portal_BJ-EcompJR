@@ -18,16 +18,16 @@
 
 ?>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/member/edit/<?php echo $member->getId()?>">
-<button>
-Editar
-</button>
+<a href="/portal_BJ-EcompJR/member/edit/<?php echo $member->getId()?>">
+    <button>
+        Editar
+    </button>
 </a>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/member/delete/<?php echo $member->getId()?>">
-<button>
-Excluir
-</button>
+<a href="/portal_BJ-EcompJR/member/delete/<?php echo $member->getId()?>">
+    <button>
+        Excluir
+    </button>
 </a>
 
 <?php
@@ -40,10 +40,10 @@ echo "<br>";
 else{
 ?>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/member/create/<?php echo $_GET['id']?>">
-<button>
-Criar
-</button>
+<a href="/portal_BJ-EcompJR/member/create/<?php echo $_GET['id']?>">
+    <button>
+        Criar
+    </button>
 </a>
 
 <?php

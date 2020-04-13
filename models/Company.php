@@ -30,30 +30,6 @@ class Company{
         }
     }
 
-    public function getId(){
-        return $this->id;
-    }
-    
-    public function getName(){
-        return $this->name;
-    }
-    
-    public function getFederation(){
-        return $this->federation;
-    }
-
-    public function setId($id){
-        $this->id = $id;
-    }
-
-    public function setName($name){
-        $this->name = $name;
-    }
-
-    public function setFederation($federation){
-        $this->federarion = $federation;
-    }
-
     public static function all(){
         $connection = Connection::getConnection();
         $query = "select * from companys";
@@ -78,5 +54,29 @@ class Company{
         $conection = Connection::getConnection();
         $query = "delete from companys where id = '{$id}'";
         $result = mysqli_query($conection, $query);
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+    
+    public function getName(){
+        return $this->name;
+    }
+    
+    public function getFederation(){
+        return $this->federation;
+    }
+
+    public function setId($id){
+        $this->id = $id;
+    }
+
+    public function setName($name){
+        $this->name = $name;
+    }
+
+    public function setFederation($federation){
+        $this->federarion = $federation;
     }
 }

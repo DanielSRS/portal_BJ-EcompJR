@@ -10,7 +10,7 @@
 ?>
 
 <html>
-    <form action="/EcompJrP/portal_BJ-EcompJR/member/update/" method="post">
+    <form action="/portal_BJ-EcompJR/member/update/" method="post">
         <input name="name" value="<?php echo $member->getName()?>" plceholder="name">
         <input name="position" value="<?php echo $member->getPosition()?>" plceholder="federation">
         <input name="id" value="<?php echo $_GET['id']?>" style="display: none;">
