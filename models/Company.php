@@ -44,10 +44,8 @@ class Company{
 
     public static function update($id, $name, $federation){
         $conection = Connection::getConnection();
-        $query = "update companys set name = '{$name}' where id = '{$id}'";
-        $query2 = "update companys set federation = '{$federation}' where id = '{$id}'";
+        $query = "update companys set name = '{$name}', federation = '{$federation}' where id = '{$id}'";
         $result = mysqli_query($conection, $query);
-        $result2 = mysqli_query($conection, $query2);
     }
 
     public static function delete($id){

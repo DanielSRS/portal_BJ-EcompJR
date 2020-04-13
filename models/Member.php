@@ -59,10 +59,8 @@ class Member{
 
     public static function update($id, $name, $position){
         $conection = Connection::getConnection();
-        $query = "update members set name = '{$name}' where id = '{$id}'";
-        $query2 = "update members set position = '{$position}' where id = '{$id}'";
+        $query = "update members set name = '{$name}', position = '{$position}' where id = '{$id}'";
         $result = mysqli_query($conection, $query);
-        $result2 = mysqli_query($conection, $query2);
     }
 
     public static function delete($id){
