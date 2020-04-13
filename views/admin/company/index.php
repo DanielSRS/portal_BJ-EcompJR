@@ -38,7 +38,7 @@
     }
     else{
 ?>
-        <a href="/portal_BJ-EcompJR/company/create/<?php echo $_GET['id']?>">
+        <a href="/portal_BJ-EcompJR/company/create/">
             <button>
                 Criar
             </button>

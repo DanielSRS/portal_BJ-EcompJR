@@ -14,7 +14,7 @@
         <input name="name" value="<?php echo $member->getName()?>" plceholder="name">
         <input name="position" value="<?php echo $member->getPosition()?>" plceholder="federation">
         <input name="id" value="<?php echo $_GET['id']?>" style="display: none;">
-        <input name="company_id" value="<?php echo $company_Id?>" style="display: none;">
+        <input name="company_id" value="<?php echo $companyId?>" style="display: none;">
         <button type="submit" plceholder="email"> Salvar </button>
     </form>
 </html>
