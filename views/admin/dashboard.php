@@ -3,19 +3,15 @@
     require_once "../../models/User.php";
     require_once "../../controllers/UserController.php";
     UserController::verifyLogin();
-    echo "Olá {$_SESSION['user']}";
+    //echo "Olá {$_SESSION['user']}";
 ?>
-<a href="/EcompJrP/portal_BJ-EcompJR/user/logout">Sair</a>
+<h3>Olá <?php echo $_SESSION['user']?></h3>
+<a href="/portal_BJ-EcompJR/user/logout">Sair</a>
 
 <br>
 <br>
+
 <div>
-    <a href="/EcompJrP/portal_BJ-EcompJR/member/index">Listar membros</a>
-    <a href="/EcompJrP/portal_BJ-EcompJR/member/create">Cadastrar membro</a>
-</div>
-<br>
-<br>
-<div>
-    <a href="/EcompJrP/portal_BJ-EcompJR/company/index">Listar empresa</a>
-    <a href="/EcompJrP/portal_BJ-EcompJR/company/create">Cadastrar empresa</a>
+    <a href="/portal_BJ-EcompJR/company/index">Listar empresa</a>
+    <a href="/portal_BJ-EcompJR/company/create">Cadastrar empresa</a>
 </div>

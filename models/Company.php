@@ -13,8 +13,15 @@ class Company{
 
     public static function create($name, $federation){
         $conection = Connection::getConnection();
-        $query = "insert into companys (name, federation) values('{$name}', '{$federation}')";
+        $query = "select * from companys where name = '{$name}' and federation = '{$federation}'";
         $result = mysqli_query($conection, $query);
+        if(mysqli_num_rows($result) == 1){
+            return true;
+        }
+        else{
+            $query = "insert into companys (name, federation) values('{$name}', '{$federation}')";
+            return mysqli_query($conection, $query);
+        }
     }
 
     public static function getById($id){
@@ -28,6 +35,30 @@ class Company{
         else{
             return false;
         }
+    }
+
+    public static function all(){
+        $connection = Connection::getConnection();
+        $query = "select * from companys";
+        $result = mysqli_query($connection, $query);
+        $companys = false;
+        for($i = 0; $i < mysqli_num_rows($result); $i++){
+            $company = mysqli_fetch_assoc($result);
+            $companys[$i] = new Company($company['id'], $company['name'], $company['federation']);
+        }
+        return $companys;
+    }
+
+    public static function update($id, $name, $federation){
+        $conection = Connection::getConnection();
+        $query = "update companys set name = '{$name}', federation = '{$federation}' where id = '{$id}'";
+        $result = mysqli_query($conection, $query);
+    }
+
+    public static function delete($id){
+        $conection = Connection::getConnection();
+        $query = "delete from companys where id = '{$id}'";
+        $result = mysqli_query($conection, $query);
     }
 
     public function getId(){
@@ -52,31 +83,5 @@ class Company{
 
     public function setFederation($federation){
         $this->federarion = $federation;
-    }
-
-    public static function all(){
-        $connection = Connection::getConnection();
-        $query = "select * from companys";
-        $result = mysqli_query($connection, $query);
-        $companys;
-        for($i = 0; $i < mysqli_num_rows($result); $i++){
-            $company = mysqli_fetch_assoc($result);
-            $companys[$i] = new Company($company['id'], $company['name'], $company['federation']);
-        }
-        return $companys;
-    }
-
-    public static function update($id, $name, $federation){
-        $conection = Connection::getConnection();
-        $query = "update companys set name = '{$name}' where id = '{$id}'";
-        $query2 = "update companys set federation = '{$federation}' where id = '{$id}'";
-        $result = mysqli_query($conection, $query);
-        $result2 = mysqli_query($conection, $query2);
-    }
-
-    public static function delete($id){
-        $conection = Connection::getConnection();
-        $query = "delete from companys where id = '{$id}'";
-        $result = mysqli_query($conection, $query);
     }
 }

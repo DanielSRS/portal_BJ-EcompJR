@@ -7,24 +7,24 @@ class UserController{
         session_start();
         if($user){
             $_SESSION['user'] = $user->getName();
-            header('Location: /EcompJrP/portal_BJ-EcompJR/views/admin/dashboard.php');
+            header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
         }
         else{
             $_SESSION['failed'] = True;
-            header('Location: /EcompJrP/portal_BJ-EcompJR/views/login.php');
+            header('Location: /portal_BJ-EcompJR/views/login.php');
         }
     }
 
     public function logout(){
         session_start();
         session_destroy();
-        header('Location: /EcompJrP/portal_BJ-EcompJR/home/login');
+        header('Location: /portal_BJ-EcompJR/home/login');
     }
 
     public function verifyLogin(){
         session_start();
         if(!$_SESSION['user']){
-            header('Location: /EcompJrP/portal_BJ-EcompJR/home/login');
+            header('Location: /portal_BJ-EcompJR/home/login');
         }
     }
 }

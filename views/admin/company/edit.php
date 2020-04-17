@@ -9,7 +9,7 @@
 ?>
 
 <html>
-    <form action="/EcompJrP/portal_BJ-EcompJR/company/update" method="post">
+    <form action="/portal_BJ-EcompJR/company/update" method="post">
         <input name="name" value="<?php echo $company->getName()?>" plceholder="name">
         <input name="federation" value="<?php echo $company->getFederation()?>" plceholder="federation">
         <input name="id" value="<?php echo $_GET['id']?>" style="display: none;">

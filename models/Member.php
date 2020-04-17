@@ -15,8 +15,15 @@ class Member{
 
     public static function create($name, $position, $companyId){
         $conection = Connection::getConnection();
-        $query = "insert into members (name, position, company_id) values('{$name}', '{$position}', '{$companyId}')";
+        $query = "select * from members where name = '{$name}' and position = '{$position}' and company_id = '{$companyId}'";
         $result = mysqli_query($conection, $query);
+        if(mysqli_num_rows($result) == 1){
+            return true;
+        }
+        else{
+            $query = "insert into members (name, position, company_id) values('{$name}', '{$position}', '{$companyId}')";
+            return mysqli_query($conection, $query);;
+        }
     }
 
     public static function getById($id){
@@ -45,6 +52,30 @@ class Member{
         }
     }
 
+    public static function allInCompany($id){
+        $connection = Connection::getConnection();
+        $query = "select * from members where company_id ={$id} ";
+        $result = mysqli_query($connection, $query);
+        $members = FALSE;
+        for($i = 0; $i < mysqli_num_rows($result); $i++){
+            $member = mysqli_fetch_assoc($result);
+            $members[$i] = new Member($member['id'], $member['name'], $member['position'], $member['company_id']);
+        }
+        return $members;
+    }
+
+    public static function update($id, $name, $position){
+        $conection = Connection::getConnection();
+        $query = "update members set name = '{$name}', position = '{$position}' where id = '{$id}'";
+        $result = mysqli_query($conection, $query);
+    }
+
+    public static function delete($id){
+        $conection = Connection::getConnection();
+        $query = "delete from members where id = '{$id}'";
+        $result = mysqli_query($conection, $query);
+    }
+
     public function getId(){
         return $this->id;
     }
@@ -71,33 +102,5 @@ class Member{
 
     public function setCompanyId($companyId){
         $this->companyId = $companyId;
-    }
-
-
-
-    public static function allInCompany($id){
-        $connection = Connection::getConnection();
-        $query = "select * from members where company_id ={$id} ";
-        $result = mysqli_query($connection, $query);
-        $members = FALSE;
-        for($i = 0; $i < mysqli_num_rows($result); $i++){
-            $member = mysqli_fetch_assoc($result);
-            $members[$i] = new Member($member['id'], $member['name'], $member['position'], $member['company_id']);
-        }
-        return $members;
-    }
-
-    public static function update($id, $name, $position){
-        $conection = Connection::getConnection();
-        $query = "update members set name = '{$name}' where id = '{$id}'";
-        $query2 = "update members set position = '{$position}' where id = '{$id}'";
-        $result = mysqli_query($conection, $query);
-        $result2 = mysqli_query($conection, $query2);
-    }
-
-    public static function delete($id){
-        $conection = Connection::getConnection();
-        $query = "delete from members where id = '{$id}'";
-        $result = mysqli_query($conection, $query);
     }
 }

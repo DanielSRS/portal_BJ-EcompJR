@@ -14,39 +14,45 @@
     $members = MemberController::allInCompany($_GET['id']);
     if($members){
         foreach($members as $member){
-    
-
 ?>
+            <a href="/portal_BJ-EcompJR/member/edit/<?php echo $member->getId()?>">
+                <button>
+                    Editar
+                </button>
+            </a>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/member/edit/<?php echo $member->getId()?>">
-<button>
-Editar
-</button>
-</a>
-
-<a href="/EcompJrP/portal_BJ-EcompJR/member/delete/<?php echo $member->getId()?>">
-<button>
-Excluir
-</button>
-</a>
+            <a href="/portal_BJ-EcompJR/member/delete/<?php echo $member->getId()?>">
+                <button>
+                    Excluir
+                </button>
+            </a>
 
 <?php
-echo $member->getName();
-echo " | ";
-echo $member->getPosition();
-echo "<br>";
+            echo $member->getName();
+            echo " | ";
+            echo $member->getPosition();
+            echo "<br>";
+        }
+    $txt = '';
     }
-}
-else{
+    else{
+        $txt = "Não há membros ";
+    }
 ?>
 
-<a href="/EcompJrP/portal_BJ-EcompJR/member/create/<?php echo $_GET['id']?>">
-<button>
-Criar
-</button>
+<h1><?php echo $txt?></h1>
+
+<br>
+<br>
+
+<a href="/portal_BJ-EcompJR/member/create/<?php echo $_GET['id']?>">
+    <button>
+        Adicionar novo membro
+    </button>
 </a>
 
-<?php
-    echo "Não há membros ";
-}
-?>
+<a href="/portal_BJ-EcompJR/views/admin/dashboard.php">
+    <button>
+        Dashboard
+    </button>
+</a>

@@ -7,6 +7,6 @@ class HomeController{
     }
 
     public function login(){
-        header('Location: /EcompJrP/portal_BJ-EcompJR/views/login.php');
+        header('Location: /portal_BJ-EcompJR/views/login.php');
     }
 }

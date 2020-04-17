@@ -24,7 +24,6 @@ class User{
         else{
             return false;
         }
-        var_dump($user['name']);
     }
 
     public function getId(){
