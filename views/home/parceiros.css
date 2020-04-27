@@ -1,0 +1,62 @@
+nav {
+    background: #F4F2F1;
+    box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+body {
+    background-color: #EEEEEE;
+}
+
+body{
+    background: #eee;
+}
+
+h5 {
+    text-align: left;
+}
+
+span{
+    font-size:15px;
+}
+.hilighted {
+  text-decoration:none; 
+  color: #0062cc;
+  border-bottom:2px solid #0062cc;
+}
+.box{
+    padding:60px 0px;
+}
+
+.box-part{
+    background:#FFF;
+    border-radius: 15px;
+    padding:60px 10px;
+    margin:30px 0px;
+    background: #F4F2F1;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0),
+                -10px -10px 10px rgba(255, 255, 255, 0),
+                inset 10px 10px 10px rgba(0, 0, 0, 0.2),
+                inset -10px -10px 10px rgba(255, 255, 255, 0.8);
+}
+
+.box-part:hover {
+    border-radius: 15px;
+    padding:60px 10px;
+    margin:30px 0px;
+    background: #F4F2F1;
+    transition: all 0.3s;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.2),
+                -10px -10px 10px rgba(255, 255, 255, 0.8),
+                inset 10px 10px 10px rgba(0, 0, 0, 0),
+                inset -10px -10px 10px rgba(255, 255, 255, 0);
+}
+
+.text{
+    margin:20px 0px;
+}
+
+.fa{
+     color:#4183D7;
+}
