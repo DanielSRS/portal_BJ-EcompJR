@@ -30,7 +30,7 @@ class dmv{
                         <?php
                             if($new){
                                 if($new == "add"){
-                                    self::add();
+                                    self::add($company_id);
                                 }
                             }
                             $members = MemberController::allInCompany($company_id);
@@ -100,7 +100,7 @@ class dmv{
     <?php
     }
 
-    public static function add(){
+    public static function add($company_id){
         ?>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="image-flip" >
@@ -108,7 +108,7 @@ class dmv{
                     <div class="frontside">
                         <div class="card">
                             <div class="card-body text-center">
-                                <form class="form-container" action="/portal_BJ-EcompJR/company/store" method="post">
+                                <form class="form-container" action="/portal_BJ-EcompJR/member/store" method="post">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
                                         <input name="name" value="O nome do novo membro" type="text" class="form-control" aria-describedby="emailHelp">
@@ -116,7 +116,8 @@ class dmv{
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Cargo</label>
-                                        <input name="federation" value="Qual o cargo?" type="text" class="form-control">
+                                        <input name="position" value="Qual o cargo?" type="text" class="form-control">
+                                        <input name="id" value="<?php echo $company_id?>" style="display: none;">
                                     </div>
                                     <button type="submit" class="btn btn-succes">Adicionar</button>
                                 </form>
@@ -128,7 +129,7 @@ class dmv{
                             <div class="card-body text-center mt-4">
                                 <h4 class="card-title">Adicionar membro</h4>
                                 <p class="card-text hide">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                <form class="form-container" action="/portal_BJ-EcompJR/company/store" method="post">
+                                <form class="form-container" action="/portal_BJ-EcompJR/member/store" method="post">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
                                         <input name="name" value="O nome do novo membro" type="text" class="form-control" aria-describedby="emailHelp">
@@ -136,7 +137,8 @@ class dmv{
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Cargo</label>
-                                        <input name="federation" value="Qual o cargo?" type="text" class="form-control">
+                                        <input name="position" value="Qual o cargo?" type="text" class="form-control">
+                                        <input name="id" value="<?php echo $company_id?>" style="display: none;">
                                     </div>
                                     <button type="submit" class="btn btn-succes">Adicionar</button>
                                 </form>
