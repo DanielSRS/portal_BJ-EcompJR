@@ -18,7 +18,7 @@ class UserController{
     public function logout(){
         session_start();
         session_destroy();
-        header('Location: /portal_BJ-EcompJR/home/login');
+        header('Location: /portal_BJ-EcompJR/');
     }
 
     public function verifyLogin($login=false){

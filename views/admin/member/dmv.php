@@ -55,7 +55,7 @@ class dmv{
                                             <div class="card-body text-center mt-4">
                                                 <h4 class="card-title">Editar ou excluir</h4>
                                                 <p class="card-text hide">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                                <form class="form-container" action="/portal_BJ-EcompJR/member/edit" method="post">
+                                                <form class="form-container" action="/portal_BJ-EcompJR/member/update" method="post">
                                                     <div class="form-group">
                                                         <label for="exampleInputEmail1">Nome</label>
                                                         <input name="name" value="<?php echo $member->getName()?>" type="text" class="form-control" aria-describedby="emailHelp">
@@ -65,6 +65,7 @@ class dmv{
                                                         <label for="exampleInputPassword1">Cargo</label>
                                                         <input name="position" value="<?php echo $member->getPosition()?>" type="text" class="form-control">
                                                         <input name="id" value="<?php echo $member->getId()?>" style="display: none;">
+                                                        <input name="company_id" value="<?php echo $member->getCompanyId()?>" style="display: none;">
                                                     </div>
                                                     <button type="submit" class="btn btn-succes">Atualizar</button>
                                                     <a href="/portal_BJ-EcompJR/member/delete/<?php echo $member->getId()?>">

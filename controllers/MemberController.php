@@ -20,7 +20,7 @@ class MemberController{
 
     public function store(){
         $member = Member::create($_POST['name'], $_POST['position'], $_POST['id']);
-        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
+        header("Location: /portal_BJ-EcompJR/views/admin/dashboard.php?vv=mem&member={$_POST['id']}&add=0");
     }
 
     public function delete($id){

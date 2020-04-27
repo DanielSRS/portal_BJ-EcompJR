@@ -58,8 +58,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
-                        About
+                    <a href="/portal_BJ-EcompJR/views/admin/dashboard.php">
+                        Empresas
                     </a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         Pages
