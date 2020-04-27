@@ -3,7 +3,7 @@
 class HomeController{
 
     public function index(){
-        echo "HomeController index";
+        header('Location: /portal_BJ-EcompJR/views/home/index.php');
     }
 
     public function login(){

@@ -47,7 +47,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="/portal_BJ-EcompJR/home/index">Portal Brasil JR</a>
                         </li>
                         <li>
                             <a href="#">Home 2</a>

@@ -1,3 +1,10 @@
+<?php
+    require_once "../database/Connection.php";
+    require_once "../models/User.php";
+    require_once "../controllers/UserController.php";
+    UserController::verifyLogin(true);
+    //echo "Olá {$_SESSION['user']}";
+?>
 <html>
     <head>
     <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">

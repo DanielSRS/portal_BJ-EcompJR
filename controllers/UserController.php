@@ -21,10 +21,13 @@ class UserController{
         header('Location: /portal_BJ-EcompJR/home/login');
     }
 
-    public function verifyLogin(){
+    public function verifyLogin($login=false){
         session_start();
-        if(!$_SESSION['user']){
+        if(!isset($_SESSION['user']) & !$login){
             header('Location: /portal_BJ-EcompJR/home/login');
+        }
+        else if($login & isset($_SESSION['user'])){
+            header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
         }
     }
 }
