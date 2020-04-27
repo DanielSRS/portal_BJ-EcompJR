@@ -8,3 +8,31 @@ nav {
 body {
     background-color: #EEEEEE;
 }
+
+.kk {
+    min-height: 80vh;
+    max-height: 90vh;
+    object-fit: cover;
+    filter: blur(15px);
+}
+
+h4{
+    text-shadow: rgba(0, 0, 0, 0.849);
+    color: rgb(44, 44, 44);
+}
+
+h5{
+    text-shadow: rgba(0, 0, 0, 0.849);
+    color: rgb(66, 66, 66);
+    
+}
+
+.zz {
+    z-index: 3000;
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    min-width: 50vw;
+    min-height: 50vh;
+    border-radius: 15px;
+}
