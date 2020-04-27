@@ -3,7 +3,7 @@
 class CompanyController{
 
     public function create(){
-        header('Location: /portal_BJ-EcompJR/views/admin/company/create.php');
+        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php?vv=add');
     }
 
     public function edit($id){
@@ -11,12 +11,12 @@ class CompanyController{
     }
 
     public function index(){
-        header('Location: /portal_BJ-EcompJR/views/admin/company/index.php');
+        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
     }
 
     public function store(){
         $company = Company::create($_POST['name'], $_POST['federation']);
-        header('Location: /portal_BJ-EcompJR/views/admin/company/index.php');
+        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
     }
 
     public static function all(){
@@ -25,11 +25,11 @@ class CompanyController{
 
     public function update(){
         $company = Company::update($_POST['id'], $_POST['name'], $_POST['federation']);
-        header('Location: /portal_BJ-EcompJR/views/admin/company/index.php');
+        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
     }
 
     public function delete($id){
         $company = Company::delete($id);
-        header('Location: /portal_BJ-EcompJR/views/admin/company/index.php');
+        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
     }
 }
