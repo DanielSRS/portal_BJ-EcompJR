@@ -3,6 +3,7 @@
     require_once "../../models/User.php";
     require_once "../../controllers/UserController.php";
     require_once "company/dcv.php";
+    require_once "member/dmv.php";
     UserController::verifyLogin();
     //echo "Olá {$_SESSION['user']}";
 ?>
@@ -105,8 +106,25 @@
         <!-- Page Content  -->
         <div id="content">
             
-            
-            <?php dcv::comp() ?>
+            <?php
+            if($_GET){
+                if($_GET['vv'] == "add"){
+                    dcv::comp("add");
+                }
+                else if($_GET['vv'] == "mem" & $_GET['member'] & $_GET['add']){
+                    dmv::memb($_GET['member'], "add");
+                }
+                else if($_GET['vv'] == "mem" & $_GET['member']){
+                    dmv::memb($_GET['member']);
+                }
+                else{
+                    dcv::comp("none");
+                }
+            }
+            else{ 
+                dcv::comp("none");
+            }
+            ?>
 
         </div>
     </div>
