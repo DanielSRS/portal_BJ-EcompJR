@@ -6,12 +6,9 @@ nav {
 }
 
 body {
-    background-color: #EEEEEE;
+    background-color: #F4F2F1;
 }
 
-body{
-    background: #eee;
-}
 
 h5 {
     text-align: left;
@@ -27,6 +24,7 @@ span{
 }
 .box{
     padding:60px 0px;
+    margin: 0 auto;
 }
 
 .box-part{
@@ -59,4 +57,12 @@ span{
 
 .fa{
      color:#4183D7;
+}
+
+.section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }

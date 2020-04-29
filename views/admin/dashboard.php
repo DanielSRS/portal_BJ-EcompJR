@@ -4,7 +4,9 @@
     require_once "../../controllers/UserController.php";
     require_once "company/dcv.php";
     require_once "member/dmv.php";
-    UserController::verifyLogin();
+    if(!UserController::verifyLogin()){
+        header('Location: /portal_BJ-EcompJR/home/login');
+    }
     //echo "Olá {$_SESSION['user']}";
 ?>
 <!DOCTYPE html>
@@ -41,7 +43,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active">
+                <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         Home
                     </a>
@@ -50,10 +52,10 @@
                             <a href="/portal_BJ-EcompJR/home/index">Portal Brasil JR</a>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="#">MEJ</a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
+                            <a href="/portal_BJ-EcompJR/views/home/parceiros.php">Parceiros</a>
                         </li>
                     </ul>
                 </li>
@@ -87,8 +89,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        Contact
+                    <a href="/portal_BJ-EcompJR/user/logout">
+                        Sair
                     </a>
                 </li>
             </ul>

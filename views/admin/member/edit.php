@@ -4,7 +4,9 @@
     require_once "../../../controllers/UserController.php";
     require_once "../../../models/Member.php";
     require_once "../../../controllers/MemberController.php";
-    UserController::verifyLogin();
+    if(!UserController::verifyLogin()){
+        header('Location: /portal_BJ-EcompJR/home/login');
+    }
     $member = Member::getById($_GET['id']);
     $companyId = $member->getCompanyId();
 ?>

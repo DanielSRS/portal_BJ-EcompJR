@@ -1,11 +1,17 @@
-
+<?php
+    require_once "../../database/Connection.php";
+    require_once "../../models/User.php";
+    require_once "../../controllers/UserController.php";
+    $logged = UserController::verifyLogin();
+    //echo "Olá {$_SESSION['user']}";
+?>
 
 <html>
     <head>
         <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="parceiros.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../admin/dashboard.css">
+        <!---<link rel="stylesheet" href="../admin/dashboard.css"> --->
     </head>
     <body>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,7 +28,7 @@
                     <a class="nav-link" href="#">MEJ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link" href="/portal_BJ-EcompJR/views/home/contact.php">Contato <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/portal_BJ-EcompJR/views/home/parceiros.php">Parceiros</a>
@@ -31,7 +37,17 @@
                 <span class="nav-item">
                 <a class="nav-link" href="/portal_BJ-EcompJR/views/admin/dashboard.php">Dashboard</a>
                 </span>
+                <?php
+                    if(!$logged){
+                ?>
                 <a class="nav-link" href="/portal_BJ-EcompJR/home/login">Login</a>
+                <?php
+                    }else{
+                ?>
+                <a class="nav-link" href="/portal_BJ-EcompJR/user/logout">Sair</a>
+                <?php
+                    }
+                ?>
             </div>
         </nav>
         <section id="team" class="pb-5">

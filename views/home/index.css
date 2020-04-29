@@ -10,10 +10,8 @@ body {
 }
 
 .kk {
-    min-height: 80vh;
-    max-height: 90vh;
-    object-fit: cover;
-    filter: blur(15px);
+    min-height: 90vh;
+    max-height: 100vh;
 }
 
 h4{
@@ -35,4 +33,11 @@ h5{
     min-width: 50vw;
     min-height: 50vh;
     border-radius: 15px;
+}
+
+.card {
+    background-color: #F4F2F1;
+    border: none;
+    box-shadow: -21px -21px 44px rgba(255, 255, 255, 0.8),
+                22px 22px 44px #E7E7E7;
 }

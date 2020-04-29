@@ -2,7 +2,9 @@
     require_once "../database/Connection.php";
     require_once "../models/User.php";
     require_once "../controllers/UserController.php";
-    UserController::verifyLogin(true);
+    if(UserController::verifyLogin(true)){
+        header('Location: /portal_BJ-EcompJR/views/admin/dashboard.php');
+    }
     //echo "Olá {$_SESSION['user']}";
 ?>
 <html>

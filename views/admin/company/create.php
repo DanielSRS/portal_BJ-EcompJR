@@ -2,7 +2,9 @@
     require_once "../../../database/Connection.php";
     require_once "../../../models/User.php";
     require_once "../../../controllers/UserController.php";
-    UserController::verifyLogin();
+    if(!UserController::verifyLogin()){
+        header('Location: /portal_BJ-EcompJR/home/login');
+    }
 ?>
 
 <html>

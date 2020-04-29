@@ -1,3 +1,11 @@
+<?php
+    require_once "../../database/Connection.php";
+    require_once "../../models/User.php";
+    require_once "../../controllers/UserController.php";
+    $logged = UserController::verifyLogin();
+    //echo "Olá {$_SESSION['user']}";
+?>
+
 <html>
     <head>
         <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.min.css">
@@ -18,7 +26,7 @@
                     <a class="nav-link" href="#">MEJ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link" href="/portal_BJ-EcompJR/views/home/contact.php">Contato <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/portal_BJ-EcompJR/views/home/parceiros.php">Parceiros</a>
@@ -27,7 +35,17 @@
                 <span class="nav-item">
                 <a class="nav-link" href="/portal_BJ-EcompJR/views/admin/dashboard.php">Dashboard</a>
                 </span>
+                <?php
+                    if(!$logged){
+                ?>
                 <a class="nav-link" href="/portal_BJ-EcompJR/home/login">Login</a>
+                <?php
+                    }else{
+                ?>
+                <a class="nav-link" href="/portal_BJ-EcompJR/user/logout">Sair</a>
+                <?php
+                    }
+                ?>
             </div>
         </nav>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -39,48 +57,45 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100 kk" src="../../assets/internet.svg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h4>Formar empreendedores comprometidos e capazes de transformar o Brasil</h4>
-                        <h4>e capazes de transformar o Brasil</h4>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <h5>Nosso compromisso, nossa razão de existir, a marca que queremos deixar no mundo</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 kk" src="../../assets/work.svg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h4>O QUE NOS TORNA ÚNICOS</h4>
-                        <h4> </h4>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <h5>"Representar e potencializar o Movimento Empresa Júnior brasileiro como agente de formação de empreendedores comprometidos e capazes de transformar o país"</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 kk" src="../../assets/email.svg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h4>BRASIL EMPREENDEDOR</h4>
-                        <h4> </h4>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <h5>Nosso primeiro compromisso é com nosso país. Acreditamos na construção de um país mais empreendedor</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 kk" src="../../assets/internet.svg" alt="First slide">
+                    <div class="kk"></div>
                     <div class="card zz" style="width: 18rem;">
-                        <div class="card-body">
+                        <div class="card-body zze">
+                        <h5 class="card-title">Formar empreendedores comprometidos e capazes de transformar o Brasil e capazes de transformar o Brasil</h5>
+                        <p class="card-text">Nosso compromisso, nossa razão de existir, a marca que queremos deixar no mundo</p>
+                        <!---<a href="#" class="btn btn-primary">Go somewhere</a> ----->
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="kk"></div>
+                    <div class="card zz" style="width: 18rem;">
+                        <div class="card-body zze">
+                        <h5 class="card-title">O QUE NOS TORNA ÚNICOS</h5>
+                        <p class="card-text">"Representar e potencializar o Movimento Empresa Júnior brasileiro 
+                                            como agente de formação de empreendedores comprometidos e capazes 
+                                            de transformar o país"</p>
+                        <!---<a href="#" class="btn btn-primary">Go somewhere</a> ----->
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                <div class="kk"></div>
+                    <div class="card zz" style="width: 18rem;">
+                        <div class="card-body zze">
+                        <h5 class="card-title">BRASIL EMPREENDEDOR</h5>
+                        <p class="card-text">Nosso primeiro compromisso é com nosso país. 
+                                             Acreditamos na construção de um país mais empreendedor</p>
+                        <!---<a href="#" class="btn btn-primary">Go somewhere</a> ----->
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="kk"></div>
+                    <div class="card zz" style="width: 18rem;">
+                        <div class="card-body zze">
                         <h5 class="card-title">Special title treatment</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <!---<a href="#" class="btn btn-primary">Go somewhere</a> ----->
                         </div>
                     </div>
                 </div>
